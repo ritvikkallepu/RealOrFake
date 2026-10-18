@@ -1,8 +1,4 @@
-"""RealOrFake ONNX inference API reconstructed from the project report.
 
-It deliberately REFUSES predictions until a real, trained model/detector.onnx
-exists. No random model or fabricated predictions are provided.
-"""
 import io
 import json
 import os
@@ -75,7 +71,6 @@ def interpret_probability(real_prob: float) -> dict:
         verdict, cls, confidence = "AI Generated", "ai", ai_prob
     else:
         verdict, cls, confidence = "Uncertain", "uncertain", max(real_prob, ai_prob)
-    # CNN probabilities are not feature explanations; don't invent texture/lighting observations.
     return {
         "verdict": verdict,
         "verdict_class": cls,

@@ -1,9 +1,4 @@
-"""Train, evaluate and export a NEW SmallCNN from locally supplied images.
 
-Reconstruction from the academic report, NOT recovered original source.
-No dataset, trained weights, benchmark evidence or checkpoint is bundled.
-Usage: python train.py --data dataset --epochs 20
-"""
 import argparse
 import json
 import random
@@ -129,7 +124,6 @@ def main(args):
         if val["accuracy"] > best_accuracy:
             best_accuracy = val["accuracy"]
             torch.save(net.state_dict(), checkpoint_path)
-    # No peeking at test during model selection; evaluate only the best checkpoint.
     net.load_state_dict(torch.load(checkpoint_path, map_location=device, weights_only=True))
     metrics = test_metrics(net, loaders["test"], device)
     parity_difference = export_to_onnx(net, args.output / "detector.onnx")

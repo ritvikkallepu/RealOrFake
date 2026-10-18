@@ -1,4 +1,3 @@
-"""API contract tests using a fake session; do NOT test model accuracy."""
 import io
 
 import numpy as np

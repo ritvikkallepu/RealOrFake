@@ -1,8 +1,8 @@
-"""SmallCNN architecture reconstructed from the project's academic report.
+"""
 
 Input: RGB image tensor [N, 3, 32, 32], ImageNet-normalized.
 Output: probability of the REAL class; ai=0, real=1.
-This is a reference implementation, NOT the missing original training code.
+
 """
 from torch import nn
 

@@ -1,8 +1,4 @@
-"""Reproducible stratified file split for the reconstructed training workflow.
 
-Expects: raw/ai/* and raw/real/* (only local images, no dataset included).
-Writes: dataset/{train,val,test}/{ai,real}/*; originals remain unchanged.
-"""
 import argparse
 import random
 import shutil
